@@ -75,6 +75,7 @@ function initialise(node, conference, userbw, name, userpin) {
             newChat.innerHTML = `<p>${ chatOutput.value }</p><span class='time-left'>${ Date().toLocaleString() }</span>`;
             chatDiv.appendChild(newChat);
             chatOutput.value = "";
+            rtc.sendChatMessage(chatOutput.value)
         }
     });
 
