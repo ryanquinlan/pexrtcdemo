@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="app.css">
 
     <script type="text/javascript" src="https://pexipdemo.com/static/webrtc/js/pexrtc.js"></script>
     <script type="text/javascript" src="webui.js"></script>
@@ -13,12 +14,39 @@
     }
     </script>
 
-    <title></title>
+    <title>RTQ PexRTC Demo</title>
   </head>
   <body>
     <h1>Hello Wookiee</h1>
+
     <div width='100%' height='100%' style='overflow:auto' id="viewport">
       <video width="100%" id="video" autoplay="autoplay" poster="https://pexipdemo.com/static/webrtc/img/spinner.gif"/>
     </div>
+
+    <div id="chat-box">
+
+      <div class="container">
+        <p>General Kenobi...</p>
+        <span class="time-right">11:00</span>
+      </div>
+
+      <div class="container outgoing">
+        <p>Hello there</p>
+        <span class="time-left">11:01</span>
+      </div>
+
+      <div class="container">
+        <img src="/w3images/bandmember.jpg" alt="Avatar">
+        <p>Your saber will make a nice addition to my collection</p>
+        <span class="time-right">11:02</span>
+      </div>
+
+      <div class="container outgoing">
+        <p>We shall see</p>
+        <span class="time-left">11:05</span>
+      </div>
+
+    </div>   <!--end chat box -->
+
   </body>
 </html>
