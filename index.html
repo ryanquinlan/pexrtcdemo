@@ -38,8 +38,23 @@
     <script type='text/javascript'>
     window.onload = function()
     {
-        /* Params: conf node, conf name, bandwidth, display name, PIN */
-        initialise("pexipdemo.com", "meet.rquinlan", "1152", "Ryan", "1984");
+      var url = window.location.href;
+      var params = url.substr(url.indexOf("?")+1).split("&");
+      var i;
+      var qp = {};
+      for (i=0;i<params.length;i++) {
+          var kv = params[i].split("=");
+          qp[kv[0]] = kv[1];
+      }
+      console.log(qp);
+
+      var source = "";
+      if ("twillio" in qp) {
+          initialise("pexipdemo.com", qp['alias'], qp['bandwidth'], qp['name'], "", source);
+      }
+      
+      /* Params: conf node, conf name, bandwidth, display name, PIN */
+      initialise("pexipdemo.com", "meet.rquinlan", "1152", "Ryan", "1984");
     }
     </script>
 
