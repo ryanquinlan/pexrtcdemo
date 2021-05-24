@@ -70,6 +70,10 @@ function initialise(node, conference, userbw, name, userpin) {
     chatOutput.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
             console.log(`send chat message: ${chatOutput.value}`);
+            var newChat = document.createElement('div');
+            newChat.className = 'container outgoing';
+            newChat.innerHTML = `<p>${ message.payload }</p><span class='time-left'>${ Date().toLocaleString() }</span>`;
+            chatDiv.appendChild(newChat);
         }
     });
 
