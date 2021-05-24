@@ -7,6 +7,8 @@ var pin;
 
 var rtc = null;
 
+var chatDiv = document.getElementById("chat-box");
+
 /* ~~~ SETUP AND TEARDOWN ~~~ */
 
 function finalise(event) {
@@ -53,15 +55,13 @@ function initialise(node, conference, userbw, name, userpin) {
     rtc.onDisconnect = remoteDisconnect;
 
     rtc.makeCall(node, conference, name, bandwidth);
-}
 
+    rtc.onChatMessage = function(message) {
+      console.log(message)
+      var newChat = document.createElement('div');
+      newChat.className = 'container'
+      newChat.innerHTML = `<p>${ message.payload }</p><span class="time-right">${ Date().toLocaleString() }</span>`
+      chatDiv.appendChild(newChat)
+    }
 
-var chatDiv = document.getElementById("chat-box");
-
-rtc.onChatMessage = function(message) {
-  console.log(message)
-  var newChat = document.createElement('div');
-  newChat.className = 'container'
-  newChat.innerHTML = `<p>${ message.payload }</p><span class="time-right">${ Date().toLocaleString() }</span>`
-  chatDiv.appendChild(newChat)
 }
