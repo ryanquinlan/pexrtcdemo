@@ -11,7 +11,6 @@ var chatDiv = document.getElementById('chat-box');
 var chatOutput = document.getElementById('chat-output');
 
 
-
 /* ~~~ SETUP AND TEARDOWN ~~~ */
 
 function finalise(event) {
@@ -60,23 +59,21 @@ function initialise(node, conference, userbw, name, userpin) {
     rtc.makeCall(node, conference, name, bandwidth);
 
     rtc.onChatMessage = function(message) {
-      console.log(message);
       var newChat = document.createElement('div');
       newChat.className = 'container';
-      newChat.innerHTML = `<p>${ message.payload }</p><span class='time-right'>${ Date().toLocaleString() }</span>`;
+      newChat.innerHTML = `<p><b>${ message.origin }:</b> ${ message.payload }</p><span class='time-right'>${ Date().toLocaleString() }</span>`;
       chatDiv.appendChild(newChat);
     };
 
     chatOutput.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            console.log(`send chat message: ${chatOutput.value}`);
-            var newChat = document.createElement('div');
-            newChat.className = 'container outgoing';
-            newChat.innerHTML = `<p>${ chatOutput.value }</p><span class='time-left'>${ Date().toLocaleString() }</span>`;
-            chatDiv.appendChild(newChat);
-            rtc.sendChatMessage(chatOutput.value);
-            chatOutput.value = "";
-        }
+      if (event.keyCode === 13) {
+          var newChat = document.createElement('div');
+          newChat.className = 'container outgoing';
+          newChat.innerHTML = `<p><b>Me:</b> ${ chatOutput.value }</p><span class='time-left'>${ Date().toLocaleString() }</span>`;
+          chatDiv.appendChild(newChat);
+          rtc.sendChatMessage(chatOutput.value);
+          chatOutput.value = "";
+      }
     });
 
 }
