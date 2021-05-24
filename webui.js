@@ -77,8 +77,9 @@ function initialise(node, conference, userbw, name, userpin) {
       }
     });
 
-    layoutSelect.addEventListener("change", function() {
-      console.log("change layout here");
+    layoutSelect.addEventListener("change", function(event) {
+      console.log("change layout here", event.value);
+      rtc.transformLayout({"layout": "4:0"})
     });
 
 }
