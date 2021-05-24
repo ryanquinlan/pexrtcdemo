@@ -9,6 +9,7 @@ var rtc = null;
 
 var chatDiv = document.getElementById('chat-box');
 var chatOutput = document.getElementById('chat-output');
+var layoutSelect = document.getElementById('layout');
 
 
 /* ~~~ SETUP AND TEARDOWN ~~~ */
@@ -75,5 +76,9 @@ function initialise(node, conference, userbw, name, userpin) {
           chatOutput.value = "";
       }
     });
+
+    layoutSelect.addEventListener("change"), function() {
+      console.log("change layout here");
+    };
 
 }
