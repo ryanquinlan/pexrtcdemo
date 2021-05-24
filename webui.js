@@ -77,8 +77,8 @@ function initialise(node, conference, userbw, name, userpin) {
       }
     });
 
-    layoutSelect.addEventListener("change"), function() {
+    layoutSelect.addEventListener("change", function() {
       console.log("change layout here");
-    };
+    });
 
 }
