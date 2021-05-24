@@ -72,7 +72,7 @@ function initialise(node, conference, userbw, name, userpin) {
             console.log(`send chat message: ${chatOutput.value}`);
             var newChat = document.createElement('div');
             newChat.className = 'container outgoing';
-            newChat.innerHTML = `<p>${ message.payload }</p><span class='time-left'>${ Date().toLocaleString() }</span>`;
+            newChat.innerHTML = `<p>${ chatOutput.value }</p><span class='time-left'>${ Date().toLocaleString() }</span>`;
             chatDiv.appendChild(newChat);
         }
     });
