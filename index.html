@@ -48,13 +48,13 @@
       }
       console.log(qp);
 
-      var source = "";
       if ("twillio" in qp) {
-          initialise("pexipdemo.com", qp['alias'], qp['bandwidth'], qp['name'], "", source);
+          initialise("pexipdemo.com", qp['alias'], qp['bandwidth'], qp['name'], "1984");
+      } else {
+        initialise("pexipdemo.com", "meet.rquinlan", "1152", "Ryan", "1984");
       }
-      
-      /* Params: conf node, conf name, bandwidth, display name, PIN */
-      initialise("pexipdemo.com", "meet.rquinlan", "1152", "Ryan", "1984");
+
+
     }
     </script>
 
