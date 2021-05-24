@@ -10,11 +10,7 @@ var rtc = null;
 var chatDiv = document.getElementById('chat-box');
 var chatOutput = document.getElementById('chat-output');
 
-chatOutput.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        console.log("send chat message");
-    }
-});
+
 
 /* ~~~ SETUP AND TEARDOWN ~~~ */
 
@@ -69,6 +65,12 @@ function initialise(node, conference, userbw, name, userpin) {
       newChat.className = 'container';
       newChat.innerHTML = `<p>${ message.payload }</p><span class='time-right'>${ Date().toLocaleString() }</span>`;
       chatDiv.appendChild(newChat);
-    }
+    };
+
+    chatOutput.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            console.log(`send chat message: ${chatOutput.value}`);
+        }
+    });
 
 }
