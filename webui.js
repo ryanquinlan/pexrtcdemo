@@ -74,6 +74,7 @@ function initialise(node, conference, userbw, name, userpin) {
             newChat.className = 'container outgoing';
             newChat.innerHTML = `<p>${ chatOutput.value }</p><span class='time-left'>${ Date().toLocaleString() }</span>`;
             chatDiv.appendChild(newChat);
+            chatOutput.value = "";
         }
     });
 
