@@ -10,17 +10,18 @@
   </head>
   <body>
     <p><h1>Hello Wookiee</h1></p>
-    
-    <label for="layout">Select a layout:</label>
-    <select name="layout" id="layout">
-      <option value="" disabled selected>Default</option>
-      <option value="1:0">Main speaker only</option>
-      <option value="1:7">Main speaker and up to 7 previous speakers</option>
-      <option value="1:21">Main speaker and up to 21 previous speakers</option>
-      <option value="2:21">Two main speakers and up to 21 previous speakers</option>
-      <option value="4:0">Equal size layout, up to a maximum of 4 speakers</option>
-      <option value="ac">Adaptive Composition layout</option>
-    </select>
+    <p>
+      <label for="layout">Select a layout:</label>
+      <select name="layout" id="layout">
+        <option value="" disabled selected>Default</option>
+        <option value="1:0">Main speaker only</option>
+        <option value="1:7">Main speaker and up to 7 previous speakers</option>
+        <option value="1:21">Main speaker and up to 21 previous speakers</option>
+        <option value="2:21">Two main speakers and up to 21 previous speakers</option>
+        <option value="4:0">Equal size layout, up to a maximum of 4 speakers</option>
+        <option value="ac">Adaptive Composition layout</option>
+      </select>
+    </p>
 
     <div width='100%' height='100%' style='overflow:auto' id="viewport">
       <video width="100%" id="video" autoplay="autoplay" poster="https://pexipdemo.com/static/webrtc/img/spinner.gif"/>
